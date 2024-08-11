@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 
 from django.contrib import messages
 from django.contrib.auth import authenticate,login, logout
-from kivy import require
+
 
 from company.models import Company
 from .models import User
@@ -68,12 +68,7 @@ def login_user(request):
         user=authenticate(request,username=email,password=password)
         if user is not None and user.is_active:
             login(request,user)
-            if request.user.is_applicant:
-                return redirect('applicant-dashboard')
-            elif request.user.is_recruiter:
-                return redirect('recruiter-dashboard')
-            else:
-                return redirect('login')
+            return redirect('dashboard')
 
         else:
             messages.warning(request,'Something went wrong')
