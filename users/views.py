@@ -31,7 +31,7 @@ def register_applicant(request):
     else:
         form=RegisterUserForm()
         context={'form':form}
-        return render(request,'register_applicant.html',context)
+        return render(request,'users/register_applicant.html',context)
     
 
 
@@ -50,11 +50,11 @@ def register_recruiter(request):
             return redirect('login')
         else:
             messages.warning(request,'Something went wrong')
-            return redirect('register-applicant')
+            return redirect('register-recruiter')
     else:
         form=RegisterUserForm()
         context={'form':form}
-        return render(request,'register_recruiter.html',context)
+        return render(request,'users/register_recruiter.html',context)
     
 
 
