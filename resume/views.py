@@ -21,6 +21,7 @@ def update_resume(request):
                 return redirect('dashboard')
             else:
                 messages.warning(request,'Something went wrong!')
+                return redirect('update-job')
         else:
             form=UpdateResumeForm(instance=resume)
             context={'form':form}

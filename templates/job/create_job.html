@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card mx-auto" style="width: 40rem;">
+
+            <div class="card-body">
+                <h5 class="card-title mb-3">Create A Job</h5>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-control">Job Title</label>
+
+                        {% render_field form.title class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEstablishDate" class="form-control">Location</label>
+
+                        {% render_field form.location class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputCity" class="form-control">Salary</label>
+
+                        {% render_field form.salary class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-control">Job Requirements</label>
+
+                        {% render_field form.requirements class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-control">Ideal Candidate</label>
+
+                        {% render_field form.ideal_candidates class="form-control" %}
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-control">Is this Job Avaiable </label>
+
+                        {% render_field form.is_available class="form-check-input" %}
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div=>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
