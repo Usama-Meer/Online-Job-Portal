@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card mx-auto" style="width: 40rem;">
+
+            <div class="card-body">
+                <h5 class="card-title mb-3">Create A Company</h5>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-control">Company Name</label>
+
+                        {% render_field form.name class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEstablishDate" class="form-control">Established Date</label>
+
+                        {% render_field form.est_date class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputCity" class="form-control">City</label>
+
+                        {% render_field form.city class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-control">State</label>
+
+                        {% render_field form.state class="form-control" %}
+
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div=>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+
+{% comment %} <div class="row">
+
+    <div class="col-md-6">
+        <div class="card mx-auto" style="width: 40rem;">
+
+            <div class="card-body">
+                <h5 class="card-title mb-3">Create A Job Advertisement</h5>
+
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-control">Job Title</label>
+                        <input type="input" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-control">Description</label>
+
+                        <textarea class="form-control" id="exampleInputPassword1" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="brn btn-primary">Submit</button>
+
+            </div=>
+        </div>
+    </div>
+</div> {% endcomment %}

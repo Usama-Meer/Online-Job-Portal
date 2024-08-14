@@ -16,209 +16,131 @@
     <body>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-            <!-- Container wrapper -->
-            <div class="container-fluid">
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">
-                <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="30" alt="" loading="lazy" />
-            </a>
-        
-            <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-        
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">TV Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Recently Added</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">My List</a>
-                </li>
-                </ul>
-                <!-- Left links -->
-        
-                <!-- Search form -->
-                <form class="d-flex input-group w-auto">
-                <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
-                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" style="padding: .45rem 1.5rem .35rem;">
-                    Search
+
+            <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light rounded" aria-label="Eleventh navbar example">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'dashboard' %}">Django Job Portal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                </form>
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CHILDREN</a>
-                </li>
-                <!-- Navbar dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button"
-                    data-mdb-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-bell"></i>
-                    </a>
-                    <!-- Dropdown menu -->
-                    <ul class="dropdown-menu dropdown-menu-end notifications-list p-1" aria-labelledby="navbarDropdown">
-                    <li>
-                        <div class="row">
-                        <div class="col-md">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" height='63' width='auto'
-                            class="d-block" alt="..." />
-                        </div>
-                        <div class="col-md">
-                            <p class="h6 mb-0">New</p>
-                            <p class="h6 mb-1">Movie title</p>
-                            <span class="small">Today</span>
-                        </div>
-                        </div>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                        <div class="row">
-                        <div class="col-md">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(10).jpg" height='63' width='auto'
-                            class="d-block" alt="..." />
-                        </div>
-                        <div class="col-md">
-                            <p class="h6 mb-0">New</p>
-                            <p class="h6 mb-1">Movie title</p>
-                            <span class="small">Today</span>
-                        </div>
-                        </div>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                        <div class="row">
-                        <div class="col-md">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(11).jpg" height='63' width='auto'
-                            class="d-block" alt="..." />
-                        </div>
-                        <div class="col-md">
-                            <p class="h6 mb-0">New</p>
-                            <p class="h6 mb-1">Movie title</p>
-                            <span class="small">Today</span>
-                        </div>
-                        </div>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                        <div class="row">
-                        <div class="col-md">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(20).jpg" height='63' width='auto'
-                            class="d-block" alt="..." />
-                        </div>
-                        <div class="col-md">
-                            <p class="h6 mb-0">New</p>
-                            <p class="h6 mb-1">Movie title</p>
-                            <span class="small">Today</span>
-                        </div>
-                        </div>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                        <div class="row">
-                        <div class="col-md">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(5).jpg" height='63' width='auto'
-                            class="d-block" alt="..." />
-                        </div>
-                        <div class="col-md">
-                            <p class="h6 mb-0">New</p>
-                            <p class="h6 mb-1">Movie title</p>
-                            <span class="small">Today</span>
-                        </div>
-                        </div>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                        <div class="row">
-                        <div class="col-md">
-                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" height='63' width='auto'
-                            class="d-block" alt="..." />
-                        </div>
-                        <div class="col-md">
-                            <p class="h6 mb-0">New</p>
-                            <p class="h6 mb-1">Movie title</p>
-                            <span class="small">Today</span>
-                        </div>
-                        </div>
-                    </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
-                    aria-expanded="false">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg" class="rounded-circle img-fluid"
-                        height='25' width='25'>
-                    </a>
-                    <!-- Dropdown menu -->
-                    <ul class="dropdown-menu dropdown-menu-end p-1" aria-labelledby="navbarDropdown">
-                    <li class="my-2 d-flex align-items-center"><img
-                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" class="rounded-circle img-fluid me-1"
-                        height='25' width='25'><span> User 1</span></li>
-                    <li class="my-2 d-flex align-items-center"><img
-                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg" class="rounded-circle img-fluid me-1"
-                        height='25' width='25'><span> User 2</span></li>
-                    <li class="my-2 d-flex align-items-center"><img
-                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle img-fluid me-1"
-                        height='25' width='25'><span> User 3</span></li>
-                    <li><a class="dropdown-item" href="#">Manage Profilses</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="#">Your Account</a></li>
-                    <li><a class="dropdown-item" href="#">Help</a></li>
-                    <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    </ul>
-                </li>
-                </ul>
         
-            </div>
-            <!-- Collapsible wrapper -->
-            </div>
-            <!-- Container wrapper -->
-        </nav>
-        <!-- Navbar -->
+                <div class="collapse navbar-collapse" id="navbarsExample09">
+
+                  {% if request.user.is_authenticated %}
+
+                    {% if request.user.is_applicant %}  
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            {% if request.user.has_resume %}
+
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Apply to Jobs</a>
+                            </li>
+
+                        {% else %}
+                            <li class="nav-item">
+                            <a class="nav-link" href="{% url 'update-resume' %}">Create Resume</a>
+                            </li>
+                        {% endif %}
+                            <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">latest jobs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+
+                    {% elif request.user.is_recruiter %}  
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+
+                            {% if request.user.has_company %}
+
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">Create Job Ads</a>
+                                </li>
+
+                            {% else %}
+                                <li class="nav-item">
+                                <a class="nav-link" href="{% url 'update-company'%}">Create Company</a>
+                                </li>
+                            {% endif %}
+                    
+
+                            <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">latest jobs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                    {% endif %}
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    </form>
+            
+                    <div class="text-end">
+
+                        <a type="button" class="btn btn-primary" href={% url 'logout' %}>logout</a>
+                    </div>
+                        
+                        
+                    </div>
+                {% endif %}
+                </div>
+              </div>
+            </nav>
 
 
         <div class="container mt-5">
 
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}" role="alert">
+                        <b>{{message}}</b>
+                    </div>
+                
+                {% endfor %}
+
+
+            {% endif %}
+
+
+
             {% block content %}
+
             
             {% endblock content %}
 
+
+
+        </div>
+
             
+{% comment %} 
 
-
-            {% comment %} <section>
+            <section class="container mt-5">
                 <div class="p-5 mb-4 bg-light rounded-3">
                     <div class="container-fluid py-5">
-                        <h2 class="display-5 fw-bold">Django Jobs. Get Hired Quickly! </h2><br>
+                        <h2 class="display-5 fw-bold text-center">Django Jobs. Get Hired Quickly! </h2><br>
 
                         <div class="card">
                             <div class="card-body">
-                                <form class="row gy-2 gx-3 align-items-center">
+                                <form class="row gy-2 gx-3 justify-content-evenly">
 
                                     <!--Name selection-->
                                     <div class="col-sm-2">
@@ -256,14 +178,13 @@
                         </div>
 
                         <p class="col-md-8 fs-6 mt-3">
-                            Welcome to Django Job Portal! Search and get your dream job. We have thousands of job offerings for you. 
-                            Don't forget to leave a like when you get a job.Good Luck with your job hunt!
+                            Welcome to Django Job Portal! Search and get your dream job. We have thousands of job offerings for you. Don't forget to leave a like when you get a job.Good Luck with your job hunt!
                         </p>
 
                         <button class="btn btn-outline-primary" type="button">More Jobs</button>
                     </div>
                 </div>
-            </section> {% endcomment %}
+            </section>  {% endcomment %}
 
             {% comment %} 
             <div class="row row-cols-1 row-cols-md-3 g-4">

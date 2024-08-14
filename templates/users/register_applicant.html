@@ -8,7 +8,7 @@
                     
     <div class="form-floating mb-3">
 
-        {% render_field form.username class="form-control" %}
+        {% render_field form.email class="form-control" %}
 
         <label for="floatingInput"> Email address</label>
     </div>
@@ -39,7 +39,7 @@
     <hr class="my-4">
 
     <small class="text-muted">
-        Aready have an account? <a href=">Sign In</a>
+        Aready have an account? <a href={% url 'login' %}>Sign In</a>
     </small>
 </form>
 
