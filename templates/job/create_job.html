@@ -16,47 +16,46 @@
                     {% csrf_token %}
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-control">Job Title</label>
+                        <label for="exampleInputEmail1" class="form-label">Job Title</label>
 
                         {% render_field form.title class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEstablishDate" class="form-control">Location</label>
+                        <label for="exampleInputEstablishDate" class="form-label">Location</label>
 
                         {% render_field form.location class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputCity" class="form-control">Salary</label>
+                        <label for="exampleInputCity" class="form-label">Salary</label>
 
                         {% render_field form.salary class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputState" class="form-control">Job Requirements</label>
+                        <label for="exampleInputState" class="form-label">Job Requirements</label>
 
-                        {% render_field form.requirements class="form-control" %}
+                        {% render_field form.requirements|attr:"rows:2"  class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputState" class="form-control">Ideal Candidate</label>
+                        <label for="exampleInputState" class="form-label">Ideal Candidate</label>
 
-                        {% render_field form.ideal_candidates class="form-control" %}
+                        {% render_field form.ideal_candidates|attr:"rows:2"  class="form-control" %}
 
                     </div>
 
 
                     <div class="mb-3">
+                        <label for="exampleInputState" class="form-label" style="display: inline-block;">Is this Job Avaiable </label>
                         {% render_field form.is_available class="form-check-input" %}
-                        <label for="exampleInputState" class="form-check" style="display: inline-block;">Is this Job Avaiable </label>
-
-
-
+                        
+                    
                     </div>
 
 

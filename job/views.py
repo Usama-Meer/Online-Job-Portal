@@ -11,12 +11,15 @@ def create_job(request):
     if request.user.is_recruiter and request.user.has_company:
         if request.method == 'POST':
             form = CreateJobForm(request.POST)
+            for value in form:
+                print(value)
+            print(form.is_valid)
             if form.is_valid():
-                var=form.save(commit=True)
+                var=form.save(commit=False)
                 var.user=request.user
                 var.company=request.user.company
                 var.save()
-
+                
                 messages.info(request,'New job has been added successfully.')
                 return redirect('dashboard')
             else:

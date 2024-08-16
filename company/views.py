@@ -14,6 +14,9 @@ def update_company(request):
         company=Company.objects.get(user=request.user)
         if request.method=="POST":
             form=UpdateCompanyForm(request.POST,instance=company)
+            for value in form:
+                print(value)
+
             if form.is_valid():
                 var=form.save(commit=False)
                 user=User.objects.get(id=request.user.id)
