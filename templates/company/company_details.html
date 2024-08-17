@@ -7,8 +7,8 @@
 <section class="container mt-5">
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h2 class="display-5 fw-bold">{{job.company.name}}</h2><br>
-            <p class="col-md-8 fs-5 mt-3">
+            <h2 class="my-5 display-3 fw-bold ls-dark text-center">{{job.company.name}}</h2>
+            <p class="text-center fs-5 mt-3">
                 {{job.company.est_date}} | {{job.company.city}} | {{job.company.state}} 
             </p>
             
@@ -20,7 +20,7 @@
 <!--job requirement-->
 <div>
     <section>
-    <h5>Company Details</h5>
+    <h4>Company Details</h4><br>
 
     <p> This is a small company that is located in {{job.company.city}},{{job.company.state}}. This company was establed in {{job.company.est_date}} by {{job.company.user.email}}. Our company has offered a number of jobs</p>
     </section>
@@ -29,7 +29,7 @@
 <!---ideal-candidates-->
 <div>
     <section>
-    <h5>Our Aim</h5>
+    <h4>Our Aim</h4><br>
 
     <p> To serve our customer the best experience in the world! </p>
     </section>
@@ -75,11 +75,14 @@
             <div class="card-body">
                 <h5 class="card-title">Visit Jobs</h5>
                 <p class="card-title">Our Company offere several jobs please visit them </p>
-                <a class="btn btn-primary btn-small" href="{% url 'job-listing' %}">Visit Jobs</a>
+                
                 
 
 
                 
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-primary btn-small" href="{% url 'job-listing' %}">Visit Jobs</a> 
             </div>
         </div>
     </div>

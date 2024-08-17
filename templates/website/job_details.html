@@ -7,16 +7,22 @@
 <section class="container mt-5">
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h2 class="display-5 fw-bold">{{job.title}}</h2><br>
-            <p class="col-md-8 fs-5 mt-3">
+            <h2 class="my-5 display-3 fw-bold ls-dark text-center">
+                {{job.title}}
+                
+            </h2>
+            <p class="text-center fs-5 mt-3">
                 {{job.city}} | {{job.job_type}} | PKR {{job.salary|intcomma}}
             </p>
             
+            
             {% if has_applied %}
-            <p><span class="text-danger">You have already applied for this job!</span></p>
+            <p class="text-center"><span class="text-danger ">You have already applied for this job!</span></p>
             {% else %}
-            <a class="btn btn-primary btn-lg" href="{% url 'apply-to-job' job.pk %}">Apply Now</a>
-
+            
+            <div class="text-center">
+            <br><a class="btn btn-primary btn-lg text-center" href="{% url 'apply-to-job' job.pk %}">Apply Now</a>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -25,7 +31,7 @@
 <!--job requirement-->
 <div>
     <section>
-    <h5>Job Requirements</h5>
+    <h4>Job Requirements</h4></br>
 
     <p> {{job.requirements}} </p>
     </section>
@@ -34,7 +40,7 @@
 <!---ideal-candidates-->
 <div>
     <section>
-    <h5>Ideal Candidates</h5>
+    <h4>Ideal Candidates</h4><br>
 
     <p> {{job.ideal_candidates}} </p>
     </section>
@@ -53,9 +59,7 @@
                 <p class="card-text"> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+            
 
         </div>
     </div>
@@ -70,10 +74,10 @@
                 <p class="card-text"> {{job.company.name}}</p>
                 <p class="card-text"> {{job.company.state}},{{job.company.city}}</p>
                 <p class="card-text"> {{job.company.est_date}}</p>
-
+            </div>
+            <div class="card-footer text-center">
                 <a class="btn btn-primary btn-small" href="{% url 'company-details' job.pk %}">Visit Company Page</a>
-                <p class="card-text"> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
+                
             </div>
             
 
@@ -89,7 +93,11 @@
                 <h5 class="card-title">Related Jobs</h5>
                 <p class="card-text"> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
-            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a class="btn btn-primary btn-small" href="{% url 'job-listing' %}">Visit Related Jobs</a>
+            
+        </div>
 
 
         </div>

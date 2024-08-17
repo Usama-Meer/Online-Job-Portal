@@ -8,8 +8,11 @@
     <section class="container mt-5">
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
-                <h2 class="display-5 fw-bold">Django Jobs. Get Hired Quickly!</h2><br>
-
+                
+                <h2 class="my-5 display-3 fw-bold ls-dark text-center">
+                    Django Jobs.
+                    <span class="text-primary">Get Hired Quickly</span>
+                </h2><br>
                 <div class="card">
                     <div class="card-body">
                         <form class="row gy-2 gx-3 align-items-center" method="GET">
@@ -49,12 +52,14 @@
                         </form>
                     </div>
                 </div>
-
-                <p class="col-md-8 fs-6 mt-3">
+                <br>
+                <p class="text-center">
                     Welcome to Django Job Portal! Search and get your dream job. We have thousands of job offerings for you. Don't forget to leave a like when you get a job.Good Luck with your job hunt!
                 </p>
-
-                <button class="btn btn-outline-primary" type="button">More Jobs</button>
+                <br>
+                <div class="text-center">
+                <a class="btn btn-outline-primary" href="{% url 'job-listing' %}">More Jobs</a>
+                </div>
             </div>
         </div>
     </section> 
@@ -71,6 +76,8 @@
                     <p class="card-text"> Job Type: {{job.job_type}}</p>
                     <p class="card-text"> Location: {{job.city}},{{job.state}} </p>
                     <p class="card-text">Salary: {{job.salary}} </p>
+                    <a class="text-center btn btn-primary btn-small" href="{% url 'job-details' job.pk %}">View Details</a>
+
 
                 </div>
                 <div class="card-footer">

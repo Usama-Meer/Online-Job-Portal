@@ -8,8 +8,11 @@
     <section class="container mt-5">
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
-                <h2 class="display-5 fw-bold">Django Jobs. Get Hired Quickly!</h2><br>
-                <p class="col-md-8 fs-5 mt-3">
+                <h2 class="my-5 display-3 fw-bold ls-dark text-center">
+                    Django Jobs.
+                    <span class="text-primary">Get Hired Quickly</span>
+                </h2><br>
+                <p class="text-center fs-5 mt-3">
                     All Available Jobs
                 </p>
             </div>
@@ -25,9 +28,9 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">{{job.title}}</h5>
-                    <p class="card-text"> Posted By: <br> {{job.company}}</p>
-                    <p class="card-text">Job Location:<br> {{job.location}}</p>
+                    <h5 class="card-title text-center">{{job.title}}</h5><br>
+                    <p class="card-text"> <b>Posted By:</b> <br> {{job.company}}</p>
+                    <p class="card-text">Job Location:<br> {{job.city}},{{job.state}}</p>
                     <p class="card-text">Salary:<br> {{job.salary|intcomma}}</p>
                     <a class="btn btn-primary btn-small" href="{% url 'job-details' job.pk %}">View Details</a>
 
