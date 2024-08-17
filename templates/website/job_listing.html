@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-evenly">
 
         {% if jobs %}
         {% for job in jobs %}
@@ -29,11 +29,12 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title text-center">{{job.title}}</h5><br>
-                    <p class="card-text"> <b>Posted By:</b> <br> {{job.company}}</p>
+                    <p class="card-text"> Posted By: <br>{{job.company}}</p>
                     <p class="card-text">Job Location:<br> {{job.city}},{{job.state}}</p>
                     <p class="card-text">Salary:<br> {{job.salary|intcomma}}</p>
+                    <div class="text-center">
                     <a class="btn btn-primary btn-small" href="{% url 'job-details' job.pk %}">View Details</a>
-
+                    </div>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Created {{job.timestamp|naturaltime}}</small>

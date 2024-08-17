@@ -71,13 +71,14 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">{{job.title}}</h5>
-                    <p class="card-text">Industry: {{job.industry}} </p>
-                    <p class="card-text"> Job Type: {{job.job_type}}</p>
-                    <p class="card-text"> Location: {{job.city}},{{job.state}} </p>
-                    <p class="card-text">Salary: {{job.salary}} </p>
+                    <h5 class="card-title text-center">{{job.title}}</h5><br>
+                    <p class="card-text">Industry: <br>{{job.industry}} </p>
+                    <p class="card-text"> Job Type: <br>{{job.job_type}}</p>
+                    <p class="card-text"> Location: <br>{{job.city}},{{job.state}} </p>
+                    <p class="card-text">Salary: <br>{{job.salary}} </p>
+                    <div class=text-center>
                     <a class="text-center btn btn-primary btn-small" href="{% url 'job-details' job.pk %}">View Details</a>
-
+                    </div>
 
                 </div>
                 <div class="card-footer">
