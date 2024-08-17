@@ -29,7 +29,7 @@
                     <p class="card-text"> Posted By: <br> {{job.company}}</p>
                     <p class="card-text">Job Location:<br> {{job.location}}</p>
                     <p class="card-text">Salary:<br> {{job.salary|intcomma}}</p>
-                    <a class="btn btn-primary btn-small" href="#">View Details</a>
+                    <a class="btn btn-primary btn-small" href="{% url 'job-details' job.pk %}">View Details</a>
 
                 </div>
                 <div class="card-footer">

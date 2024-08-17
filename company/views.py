@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 
 from django.contrib import messages
 
+from job.models import Job
+
 from .form import UpdateCompanyForm
 from .models import Company
 from users.models import User
@@ -39,7 +41,8 @@ def update_company(request):
 
 #view company details
 def company_details(request,pk):
-    company=Company.objects.get(pk=pk)
-    context={'company':company}
+
+    job=Job.objects.get(pk=pk)
+    context={'job':job}
     return render(request,'company/company_details.html',context)
 

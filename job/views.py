@@ -3,7 +3,7 @@ from django.contrib import messages
 
 from users.models import User
 from .form import CreateJobForm, UpdateJobForm
-from .models import Job
+from .models import ApplyJob, Job
 
 
 #create a job
@@ -59,3 +59,45 @@ def update_job(request,pk):
     else:
         messages.warning(request,'Permission denied')
         return redirect('dashboard')
+    
+
+#job_manage
+
+def manage_jobs(request):
+    jobs=Job.objects.filter(user=request.user,company=request.user.company)
+    context={'jobs':jobs}
+    return render(request,'job/manage_jobs.html',context)
+
+
+def apply_to_job(request,pk):
+    if request.user.is_authenticated  and request.user.is_applicant:
+        job=Job.objects.get(pk=pk)
+        if ApplyJob.objects.filter(user=request.user,job=pk).exists():
+            messages.warning(request,"Permission Denied")
+            return redirect('dashboard')
+        else:
+            ApplyJob.objects.create(
+                job=job,
+                user=request.user,
+                status='Pending'
+            )
+            messages.info(request,'You have successfully applied! Please see dashboard')
+            return redirect('dashboard')
+    else:
+        messages.info(request,"Please login to continue")
+        return redirect('login')
+
+
+
+def all_applicants(request,pk):
+    
+    job=Job.objects.get(pk=pk)
+    applicants=job.applyjob_set.all() # type: ignore
+    context={'job':job,'applicants':applicants}
+    return render(request,'job/all_applicants.html',context)
+
+
+def applied_jobs(request):
+    jobs=ApplyJob.objects.filter(user=request.user)
+    context={'jobs':jobs}
+    return render(request,'job/applied_job.html',context)

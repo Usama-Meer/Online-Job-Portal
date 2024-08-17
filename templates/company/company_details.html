@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+
+<section class="container mt-5">
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h2 class="display-5 fw-bold">{{job.company.name}}</h2><br>
+            <p class="col-md-8 fs-5 mt-3">
+                {{job.company.est_date}} | {{job.company.city}} | {{job.company.state}} 
+            </p>
+            
+
+        </div>
+    </div>
+</section>
+
+<!--job requirement-->
+<div>
+    <section>
+    <h5>Company Details</h5>
+
+    <p> This is a small company that is located in {{job.company.city}},{{job.company.state}}. This company was establed in {{job.company.est_date}} by {{job.company.user.email}}. Our company has offered a number of jobs</p>
+    </section>
+</div><br>
+
+<!---ideal-candidates-->
+<div>
+    <section>
+    <h5>Our Aim</h5>
+
+    <p> To serve our customer the best experience in the world! </p>
+    </section>
+</div><br>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+    <!--card-->
+    
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Other Details</h5>
+                <p class="card-text"> Our company consists of several talented individuals from different communities establishin a diverse job culture in our offices.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--card-->
+    
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Contact Us</h5>
+                <p class="card-title">+92312344567</p>
+                <p class="card-text"> www.{{job.company.name}}.com</p>
+                <p class="card-text"> info@{{job.company.name}}.com</p>
+                
+
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Visit Jobs</h5>
+                <p class="card-title">Our Company offere several jobs please visit them </p>
+                <a class="btn btn-primary btn-small" href="{% url 'job-listing' %}">Visit Jobs</a>
+                
+
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!--card-->
+    
+
+
+</div>
+
+
+{% endblock content %}
+

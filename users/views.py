@@ -12,6 +12,16 @@ from resume.models import Resume
 
 
 
+def register(request):
+    return render(request,'users/register.html')
+    # button_url = request.GET.get('button_url')
+
+    # # Check the button URL and redirect accordingly
+    # if button_url == 'recruiter':
+    #     return redirect('register-recruiter')
+    # else:
+    #     return redirect('register-applicant')
+    
 #register applicant only
 
 def register_applicant(request):

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card mx-auto" style="width: 40rem;">
+
+            <div class="card-body">
+                <h5 class="card-title mb-3">Update Job</h5>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Job Title</label>
+
+                        {% render_field form.title class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEstablishDate" class="form-label">City</label>
+
+                        {% render_field form.city class="form-control" %}
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEstablishDate" class="form-label">State</label>
+
+                        {% render_field form.state class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEstablishDate" class="form-label">Industry</label>
+
+                        {% render_field form.industry class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEstablishDate" class="form-label">Job Type</label>
+
+                        {% render_field form.job_type class="form-control" %}
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputCity" class="form-label">Salary</label>
+
+                        {% render_field form.salary class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-label">Job Requirements</label>
+
+                        {% render_field form.requirements|attr:"rows:2"  class="form-control" %}
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-label">Ideal Candidate</label>
+
+                        {% render_field form.ideal_candidates|attr:"rows:2"  class="form-control" %}
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-label" style="display: inline-block;">Is this Job Avaiable </label>
+                        {% render_field form.is_available class="form-check-input" %}
+                        
+                    
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div=>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

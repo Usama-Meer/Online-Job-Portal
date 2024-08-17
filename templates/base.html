@@ -1,5 +1,5 @@
 <!doctype <!DOCTYPE html>
-
+{% load widget_tweaks %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -19,7 +19,7 @@
 
             <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light rounded" aria-label="Eleventh navbar example">
               <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'dashboard' %}">Django Job Portal</a>
+                <a class="navbar-brand" href="{% url 'home' %}">Django Job Portal</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,21 +31,29 @@
                     {% if request.user.is_applicant %}  
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Home</a>
                             </li>
                             {% if request.user.has_resume %}
 
                             <li class="nav-item">
-                            <a class="nav-link" href="#">Apply to Jobs</a>
+                            <a class="nav-link" href="{% url 'job-listing' %}">Apply to Jobs</a>
                             </li>
 
-                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'update-resume' %}">Update Resume</a>
+                            </li>
+
+                            {% else %}
                             <li class="nav-item">
                             <a class="nav-link" href="{% url 'update-resume' %}">Create Resume</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'applied' %}">Jobs Applied</a>
+                            </li>
                         {% endif %}
                             <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">latest jobs</a>
+                            <a class="nav-link" href="{% url 'job-listing' %}">latest jobs</a>
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
@@ -60,13 +68,17 @@
                     {% elif request.user.is_recruiter %}  
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Home</a>
                             </li>
 
                             {% if request.user.has_company %}
 
                                 <li class="nav-item">
                                 <a class="nav-link" href="{% url 'create-job'%}">Create Job Ads</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'update-company'%}">Update Company</a>
                                 </li>
 
                             {% else %}
@@ -77,7 +89,7 @@
                     
 
                             <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">latest jobs</a>
+                                <a class="nav-link" href="{% url 'manage-jobs' %}">Manage Jobs</a>
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
@@ -88,9 +100,16 @@
                             </ul>
                             </li>
                         </ul>
-                    {% endif %}
+                    
+                        {% endif %}
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}" >{{request.user.email}}</a>
+                    </li>
+                    </ul>
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                        {% render_field filter.form.title class="form-control form-control-dark text-bg-dark" id="autoSizingInput" placeholder="Search..." aria-label="Search" %}
+                        
                     </form>
             
                     <div class="text-end">
@@ -100,7 +119,30 @@
                         
                         
                     </div>
-                {% endif %}
+
+                    {% else %}
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'job-listing' %}">All Jobs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                    </ul>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        {% render_field filter.form.title class="form-control form-control-dark text-bg-dark" id="autoSizingInput" placeholder="Search..." aria-label="Search" %}
+                        
+                    </form>
+        
+                    <div class="text-end">
+
+                        <a type="button" class="btn btn-outline-primary me-2" href={% url 'login' %}>login</a>
+                        <a type="button" class="btn btn-primary" href={% url 'register' %}>Register</a>
+                    </div>    
+                    {% endif %}
+
                 </div>
               </div>
             </nav>

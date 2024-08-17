@@ -10,9 +10,9 @@ def update_resume(request):
     if request.user.is_applicant:
         resume=Resume.objects.get(user=request.user)
         if request.method=="POST":
-            form=UpdateResumeForm(request.POST,instance=resume)
+            form=UpdateResumeForm(request.POST,request.FILES,instance=resume)
             if form.is_valid():
-                var=form.save()
+                var=form.save(commit=False)
                 user=User.objects.get(pk=request.user.id)
                 user.has_resume=True
                 var.save()
@@ -21,7 +21,7 @@ def update_resume(request):
                 return redirect('dashboard')
             else:
                 messages.warning(request,'Something went wrong!')
-                return redirect('update-job')
+                
         else:
             form=UpdateResumeForm(instance=resume)
             context={'form':form}
