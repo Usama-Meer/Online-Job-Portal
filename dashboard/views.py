@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from job.models import ApplyJob
 
 # def proxy(request):
 #     if request.user.is_applicant:
@@ -17,4 +18,9 @@ from django.shortcuts import redirect, render
 
 
 def dashboard(request):
-    return render(request, 'dashboard/dashboard.html')
+    if request.user.is_applicant:
+        jobs=ApplyJob.objects.filter(user=request.user)
+        context={'jobs':jobs}
+        return render(request,'dashboard/dashboard.html',context)
+    else:
+        return render(request, 'dashboard/dashboard.html')
