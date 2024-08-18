@@ -16,35 +16,35 @@
                     {% csrf_token %}
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-control">First Name</label>
+                        <label for="exampleInputEmail1" class="form-label">First Name</label>
 
                         {% render_field form.first_name class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputSurname" class="form-control">Surname</label>
+                        <label for="exampleInputSurname" class="form-label">Surname</label>
 
                         {% render_field form.surname class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputLocation" class="form-control">Location</label>
+                        <label for="exampleInputLocation" class="form-label">Location</label>
 
                         {% render_field form.location class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputJobTitle" class="form-control">Job Title</label>
+                        <label for="exampleInputJobTitle" class="form-label">Job Title</label>
 
                         {% render_field form.job_title class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputJobTitle" class="form-control">Upload Resume</label>
+                        <label for="exampleInputJobTitle" class="form-label">Upload Resume</label>
 
                         {% render_field form.upload_resume class="form-control" %}
 

@@ -13,5 +13,5 @@ class User(AbstractUser):
 
     has_resume=models.BooleanField(default=False)
     has_company=models.BooleanField(default=False)
-    has_applied=models.BooleanField(default=False)
+    # has_applied=models.BooleanField(default=False)
 

@@ -81,6 +81,12 @@ def apply_to_job(request,pk):
                 user=request.user,
                 status='Pending'
             )
+
+            # user=User.objects.get(pk=request.user.id)
+            # user.has_applied=True
+                
+            # user.save()
+
             messages.info(request,'You have successfully applied! Please see dashboard')
             return redirect('dashboard')
     else:

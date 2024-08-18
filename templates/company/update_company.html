@@ -16,28 +16,28 @@
                     {% csrf_token %}
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-control">Company Name</label>
+                        <label for="exampleInputEmail1" class="form-label">Company Name</label>
 
                         {% render_field form.name class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEstablishDate" class="form-control">Established Date</label>
+                        <label for="exampleInputEstablishDate" class="form-label">Established Date</label>
 
                         {% render_field form.est_date class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputCity" class="form-control">City</label>
+                        <label for="exampleInputCity" class="form-label">City</label>
 
                         {% render_field form.city class="form-control" %}
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputState" class="form-control">State</label>
+                        <label for="exampleInputState" class="form-label">State</label>
 
                         {% render_field form.state class="form-control" %}
 

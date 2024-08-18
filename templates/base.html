@@ -47,20 +47,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'update-resume' %}">Update Resume</a>
                             </li>
-                            {% if jobs.user.email is not none %}
+
                                                     
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'applied_jobs' %}">Jobs Applied</a>
+                                <a class="nav-link" href="{% url 'applied-jobs' %}">Jobs Applied</a>
                             </li>
-
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Jobs Applied</a>
-                            </li>
-
-
-
-                            {% endif %}
 
 
                             {% else %}
